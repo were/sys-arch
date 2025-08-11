@@ -1,0 +1,22 @@
+<html>
+
+	<head>
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	</head>
+	<body>
+		<button id="a">A0</button>
+		<button id="b">B1</button>
+		<script>
+			$('#a').click(function() {
+				const raw = $('#a').text();
+				const idx = parseInt(raw.slice(1)) + 1;
+				$('#a').text('A' + idx);
+			});
+			$('#b').click(function() {
+				for (;;) {
+					// This is an infinite loop
+				}
+			});
+		</script>
+	</body>
+</html>
