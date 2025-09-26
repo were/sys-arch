@@ -1,10 +1,10 @@
 #include "mini/header.h"
 
-void koo();
+// void koo();
 
 int main() {
   foo();
   goo();
-  koo();
+  // koo();
   return 0;
 }

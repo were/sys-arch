@@ -1,5 +1,4 @@
 def wrapper(func):
-    print('!!!')
     def inner(x):
         print("Before")
         result = func(x)

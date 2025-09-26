@@ -1,4 +1,4 @@
-def wrapper(func, *args, **kwargs):
+def wrapper(func):
     print('000')
     def inner(*args, **kwargs):
         return func(*args, **kwargs)

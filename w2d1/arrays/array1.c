@@ -14,7 +14,7 @@ int main() {
   printf("%d\n", (int)sizeof(a));
   printf("%d\n", (int)sizeof(b));
   // array access
-  // expected: (5 * 100 + 5 - 0) * sizeof(int)
+  // expected: (5 * 100 + 5 - 0)
   printf("%d\n", (int)(&b[5][5] - (int *)b));
   // array is aligned by its scalar element
   assert((uint64_t)(d) % 8 == 0);
