@@ -33,15 +33,15 @@ main_plain: $(DRIVER_SRC) $(LIB_SRC)
 	@echo "Compiling main program..."
 	$(CXX) $(FLAGS) $(INCLUDE) -o $@ $^
 
-main_shared: build/libfoo.so $(DRIVER_SRC)
+main_shared: $(DRIVER_SRC) build/libfoo.so
 	@echo "Compiling main program with shared library..."
 	# -L build: Find lib from this folder
 	# -lfoo: Find libfoo.so
-	$(CXX) $(FLAGS) $(INCLUDE) -o $@ $^ -Lbuild -lfoo
+	$(CXX) $(FLAGS) $(INCLUDE) -o $@ $< -Lbuild -lfoo
 
-main_static: build/libfoo.a $(DRIVER_SRC)
+main_static: $(DRIVER_SRC) build/libfoo.a
 	@echo "Compiling main program with static library..."
-	$(CXX) $(FLAGS) $(INCLUDE) -o $@ $^
+	$(CXX) $(FLAGS) $(INCLUDE) -o $@ $< -Lbuild -lfoo
 
 clean:
 	rm -rf build main_*

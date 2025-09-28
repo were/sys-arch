@@ -1,0 +1,4 @@
+build
+main_shared
+main_static
+*.so
